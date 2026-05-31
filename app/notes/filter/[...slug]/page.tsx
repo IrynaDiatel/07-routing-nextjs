@@ -4,16 +4,16 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import { fetchNotes } from "@/lib/api";
-import Notes from "./Notes.client";
+import Notes from "@/app/notes/Notes.client";
 import type { NoteTag } from "@/types/note";
 
 interface FilterPageProps {
-  params: Promise<{ tag: string[] }>;
+  params: Promise<{ slug: string[] }>;
 }
 
 export default async function FilterPage({ params }: FilterPageProps) {
-  const { tag } = await params;
-  const selectedTag = tag[0] === "all" ? "" : (tag[0] as NoteTag);
+  const { slug } = await params;
+  const selectedTag = slug[0] === "all" ? "" : (slug[0] as NoteTag);
 
   const queryClient = new QueryClient();
 
