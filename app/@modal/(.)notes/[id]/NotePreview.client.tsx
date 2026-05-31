@@ -1,8 +1,7 @@
 "use client";
 
 import type { Note } from "@/types/note";
-import css from "./NotePreview.module.css";
-
+import css from "@/components/NotePreview/NotePreview.module.css";
 interface NotePreviewProps {
   note: Note;
 }
